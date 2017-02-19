@@ -1,0 +1,336 @@
+/* CSS Document */
+/* --------------------------------------- */
+/* CSS3 animation keyframes*/
+/* simpleFadeIn ------------- */
+@-moz-keyframes simpleFadeIn {
+  /* line 8, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -moz-transform: scale(1);
+  }
+
+  /* line 15, ../../scss/support/anim-css3.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes simpleFadeIn {
+  /* line 22, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: scale(1);
+  }
+
+  /* line 29, ../../scss/support/anim-css3.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+/* simpleFadeOut ------------- */
+@-moz-keyframes simpleFadeOut {
+  /* line 38, ../../scss/support/anim-css3.scss */
+  99% {
+    opacity: 0;
+    visibility: hidden;
+    -moz-transform: scale(1);
+  }
+
+  /* line 45, ../../scss/support/anim-css3.scss */
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    -moz-transform: scale(0);
+  }
+}
+
+@-webkit-keyframes simpleFadeOut {
+  /* line 54, ../../scss/support/anim-css3.scss */
+  99% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(1);
+  }
+
+  /* line 61, ../../scss/support/anim-css3.scss */
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0);
+  }
+}
+
+/* scaleDefaultFadeIn ------------- */
+@-moz-keyframes scaleDefaultFadeIn {
+  /* line 74, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: visible;
+    -moz-transform: scale(0.5);
+  }
+
+  /* line 80, ../../scss/support/anim-css3.scss */
+  100% {
+    -moz-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleDefaultFadeIn {
+  /* line 88, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: visible;
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+
+  /* line 95, ../../scss/support/anim-css3.scss */
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* scaleDownFadeOut ------------- */
+@-moz-keyframes scaleDownFadeOut {
+  /* line 106, ../../scss/support/anim-css3.scss */
+  99% {
+    -moz-transform: scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* line 112, ../../scss/support/anim-css3.scss */
+  100% {
+    -moz-transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes scaleDownFadeOut {
+  /* line 121, ../../scss/support/anim-css3.scss */
+  99% {
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* line 127, ../../scss/support/anim-css3.scss */
+  100% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* hideScaleDown ------------- */
+@-moz-keyframes hideScaleDown {
+  /* line 139, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: hidden;
+    -moz-transform: scale(0.5);
+    opacity: 0;
+  }
+
+  /* line 145, ../../scss/support/anim-css3.scss */
+  100% {
+    visibility: hidden;
+    -moz-transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideScaleDown {
+  /* line 154, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: hidden;
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+
+  /* line 161, ../../scss/support/anim-css3.scss */
+  100% {
+    visibility: hidden;
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* staticButtonClick ------------- */
+@-moz-keyframes staticButtonClick {
+  /* line 173, ../../scss/support/anim-css3.scss */
+  0% {
+    -moz-transform: scale(1);
+  }
+
+  /* line 177, ../../scss/support/anim-css3.scss */
+  50% {
+    -moz-transform: scale(0.95);
+  }
+
+  /* line 181, ../../scss/support/anim-css3.scss */
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes staticButtonClick {
+  /* line 188, ../../scss/support/anim-css3.scss */
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  /* line 192, ../../scss/support/anim-css3.scss */
+  50% {
+    -webkit-transform: scale(0.95);
+  }
+
+  /* line 196, ../../scss/support/anim-css3.scss */
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+/* switchDummy ------------- */
+@-moz-keyframes switchDummy {}
+@-webkit-keyframes switchDummy {}
+/* hide ------------- */
+@-moz-keyframes hide {
+  /* line 215, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: hidden;
+  }
+
+  /* line 219, ../../scss/support/anim-css3.scss */
+  100% {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes hide {
+  /* line 226, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: hidden;
+  }
+
+  /* line 230, ../../scss/support/anim-css3.scss */
+  100% {
+    visibility: hidden;
+  }
+}
+
+/* show ------------- */
+@-moz-keyframes show {
+  /* line 239, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: visible;
+  }
+
+  /* line 243, ../../scss/support/anim-css3.scss */
+  100% {
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes show {
+  /* line 250, ../../scss/support/anim-css3.scss */
+  0% {
+    visibility: visible;
+  }
+
+  /* line 254, ../../scss/support/anim-css3.scss */
+  100% {
+    visibility: visible;
+  }
+}
+
+/* --------------------------------------- */
+/* CSS3 animation keyframes*/
+/* line 264, ../../scss/support/anim-css3.scss */
+.anim {
+  /* CSS3 init transition animations */
+  -moz-animation-name: switchDummy;
+  -moz-animation-duration: 200ms;
+  -moz-transform-origin: 50%, 50%;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-timing-function: ease-out;
+  -webkit-animation-name: switchDummy;
+  -webkit-animation-duration: 200ms;
+  -webkit-transform-origin: 50%, 50%;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+  /*Fix for performance*/
+  -webkit-transform: translateZ(0);
+}
+
+/* line 284, ../../scss/support/anim-css3.scss */
+.animHidden {
+  /* CSS3 init transition animations BUT this one starts hidden*/
+  -moz-animation-name: hide;
+  -moz-animation-duration: 200ms;
+  -moz-transform-origin: 50%, 50%;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-timing-function: ease-out;
+  -webkit-animation-name: hide;
+  -webkit-animation-duration: 200ms;
+  -webkit-transform-origin: 50%, 50%;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+}
+
+/* simple fades */
+@-webkit-keyframes fadeIn {
+  /* line 302, ../../scss/support/anim-css3.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 302, ../../scss/support/anim-css3.scss */
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  /* line 303, ../../scss/support/anim-css3.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 303, ../../scss/support/anim-css3.scss */
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  /* line 304, ../../scss/support/anim-css3.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 304, ../../scss/support/anim-css3.scss */
+  to {
+    opacity: 1;
+  }
+}
+
+/* line 306, ../../scss/support/anim-css3.scss */
+.fade-in {
+  opacity: 0;
+  /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}

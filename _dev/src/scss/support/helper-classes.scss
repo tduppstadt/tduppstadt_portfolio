@@ -1,0 +1,71 @@
+
+
+// no selection
+.no-select
+{
+	-webkit-touch-callout : none;
+	-webkit-user-select   : none;
+	-khtml-user-select    : none;
+	-moz-user-select      : none;
+	-ms-user-select       : none;
+	user-select           : none;
+}
+
+// ... just because
+body, html
+{
+	min-height: 100%;
+} 
+
+
+// remove anchor outlines
+a
+{
+	&:link,
+	&:visited,
+	&:hover,
+	&:active
+	{
+		outline: none;
+	}
+}
+
+// fix for safari clean web fonts 
+body { -webkit-font-smoothing: antialiased; }
+
+
+// fix for IE aliased image resize 
+img { -ms-interpolation-mode: bicubic; }
+
+
+// case text
+.uppercase
+{
+	text-transform: uppercase;
+}
+
+.lowercase
+{
+	text-transform: lowercase;
+}
+
+.capitalize
+{
+	text-transform: capitalize;
+}
+
+.smallcaps
+{
+	font-variant: small-caps;
+}
+
+// prevent wrapping
+.nowrap
+{
+	white-space: nowrap;
+}
+
+.inline-block
+{
+    display: inline-block;
+}

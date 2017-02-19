@@ -1,0 +1,52 @@
+
+// good for responsive images
+.responsive
+{
+	max-width : 100%; 
+	height    : auto;
+} 
+
+// ----------------------------------
+// mixins
+// ----------------------------------
+
+// ______________________________________________________________
+//                                           responsive-max-width
+
+// set your max document width
+// mix-responsivePercentage(327);
+$responsive-max-width: 640;
+@function mix-responsivePercentage($n)
+{
+	@return percentage($n / $responsive-max-width);
+}
+
+
+// ______________________________________________________________
+//                                                 mix-divideHalf
+@function mix-divideHalf($n)
+{
+	@return $n / 2 + px;
+}
+
+// ______________________________________________________________
+//                                                   mix-timesTwo
+@function mix-timesTwo($n)
+{
+	@return $n * 2 + px;
+}
+
+
+// ----------------------------------
+// font inheritance
+// ----------------------------------
+.responsive-text
+{
+	font-size: 1em;
+
+    @media only screen and (max-width: 600px) 
+    {
+      	font-size: .5em;        
+    }
+
+}

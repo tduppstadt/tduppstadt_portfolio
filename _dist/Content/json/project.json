@@ -1,0 +1,24 @@
+{
+    "environment":
+	{			
+		"production":
+		{
+			"url": "lunchboxnetwork.com"
+		},
+
+		"development":
+		{
+			"url": "dev."
+		},
+
+		"stage":
+		{
+			"url": "stage."
+		},
+
+		"local":
+		{
+			"url": "localhost"
+		}
+	}
+}
