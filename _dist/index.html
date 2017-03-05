@@ -30,356 +30,58 @@
 
 </head>
 
-<body>
+<body name="top">
 	<div class="wrapper">
 		<div class="constrain">
-			<div class="content">
-				<header>
-					<h1 class="font-arial-black"><strong>Thom Duppstadt</strong></h1>
-					<h2 class="font-arial-black"><strong>Innnovative Front End Engineer</strong></h2>
-					<div class="contact">
-						<span class="hvr-pop"><a href="mailto:tduppstadt@gmail.com">tduppstadt@gmail.com</a></span> <span class="space-me">|</span> <span class="hvr-pop"><a href="https://www.linkedin.com/in/thom-duppstadt/" target="_blank">LinkedIn</a></span><span class="space-me">|</span><span class="hvr-pop"><a href="Content/download/tDuppstadt_Resume_2016.pdf" target="_blank">Resume</a></span>
-					</div>
-					<div class="summary">15+ years professional experience in design and development (5 years in JS front end dev). Focusing on rapid development producing clean, readable, and efficient code with attention to best practices. Building modular architectures to ensure maintainable, reusable, scalable applications. My background in design combined with my extensive development experience give me a unique skill set that would be an asset to any development team.</div>
 
-				</header>
+			<header>
+				<h1 class="font-arial-black"><strong>Thom Duppstadt</strong></h1>
+				<h2 class="font-arial-black"><strong>Innnovative Front End Engineer</strong></h2>
+				<div class="contact">
+					<span class="hvr-pop"><a href="mailto:tduppstadt@gmail.com">tduppstadt@gmail.com</a></span> <span class="space-me">|</span> <span class="hvr-pop"><a href="https://www.linkedin.com/in/thom-duppstadt/" target="_blank">LinkedIn</a></span><span class="space-me">|</span><span class="hvr-pop"><a href="Content/download/tDuppstadt_Resume_2016.pdf" target="_blank">Resume</a></span>
+				</div>
 
-				<main>
+				<nav class="header-nav">
 
-					<div class="portfolio-examples">
+					<span class="js-nav-button nav-button hvr-float-shadow" data-id="default"><a class="nav-buttons font-arial-black" href="#default">Home</a></span>
 
-						<!-- firestarter  -->
-						<div class="portfolio-item">
-							<div class="image"><span class="hvr-pop"><a href="Content/images/global/firestarter-full.jpg" target="_blank"><img src="Content/images/global/firestarter.jpg"/></a></span></div>
-							<div class="copy">
-								<p><span class="title">Firestarter</span> was my proudest application to date. A responsive, cross-browser, single page app used as a click tracking, blogger engagement tool to promote client campaigns. The blogger would register and participate in campaigns by using the assets and instructions provided from the site into their own blogger website, this information was maintained by an Admin site. The application would track their progress and compare their click ranking to other participating bloggers.</p> 
+					<span class="nav-button-spacer"> |</span>
+					<span class="js-nav-button nav-button hvr-float-shadow" data-id="about"><a class="nav-buttons font-arial-black" href="#about"> About </a></span>
 
-									<p><strong>Implementation:</strong> I built this from the ground up using an MVC framework I created to use on all my other smaller projects prior, including Elite Receipt. Its built on RequireJS, JQuery, Bootstrap, doT, Grunt, and SASS; but also uses Hammer and D3. Other features include graphing, custom analytics, and implementation of customer service chat. I also built with it the custom Admin site to populate campaign assets and manage click tracking, fraud, and finances for participating bloggers. </p>
+					<span class="nav-button-spacer"> |</span> 
+					<span class="js-nav-button  nav-button hvr-float-shadow" data-id="portfolio"><a class="nav-buttons font-arial-black" href="#portfolio"> Portfolio </a></span>
 
-									<p><strong>Beyond the Code:</strong> I took on many challenges which included reading consumer and client feedbacks and coming up with and presenting solutions to address those. Researching related ideas to compare the competition, features, and costs. Pitching ideas on how to recreate and mitigate against threats such as click fraud. I also adapted integration of the RESTful interface migrating the backend from Ruby to NodeJS. </p>
-
-									<p><strong>Success:</strong> This project I was most proud of because I built it from the ground up and it was very successful and a very solid application. </p>
-
-								<p><strong>This application was used in campaigns for Kraft and Thomas & Friends.</strong></p>
-
-								<br><strong>A Closer Look:</strong>
-
-								<ul>
-									<li>Here is the actual site; however, I have not contributed to this project in about 2 years. <span class="hvr-pop"><a href="https://firestart.me/" target="_blank">https://firestart.me/</a></span></li>
-									<li>Here is my own copy of the site but without access to the API so it is not functional passed the registration; however, you may still check out the code, structure, and responsiveness of the UI. <span class="hvr-pop"><a href="http://tduppstadt.com/project/firestarter/" target="_blank">http://tduppstadt.com/project/firestarter/</a></span></li>
-								</ul>
-							</div>
-						</div>
-
-
-						<!-- elite receipt  -->
-						<div class="portfolio-item">
-							<div class="image"><a href="Content/images/global/eliteReceipt-full.jpg" target="_blank"><img src="Content/images/global/eliteReceipt.jpg"/></a></div>
-							<div class="copy">
-								<p><span class="title">Elite Receipt</span> was my first project with the Innovations team. It was a Walmart sponsored, receipt scan to rewards mobile web application that was created as a demo for a Hot Wheels test campaign. It interfaced through a custom admin page to handle campaign data and user data to maintain their scanned receipts, their points, and rewards. </p> 
-
-								<p><strong>The Challenge:</strong> The program developed by a contractor no longer with the company. I assessed the application and saw that it lacked any sustainable architecture in the JS, HTML, and the CSS. Also, the Hot Wheels campaign was hard coded into the application. I was tasked with optimizing the mobile site for scalability, designing and building a desktop version of the site cross browser compatible down to IE7 (in 2 weeks), abstracting all styling and images for both mobile and desktop so we could implement custom branding, and creating a CMS interface within the admin site.</p>
-
-								<p><strong>The Desktop:</strong> The most urgent was the desktop version. I made a quick mock to demonstrate the general design while keeping in mind that the styling will need to be abstracted so keeping it simple with style reusability. I created a prototype to keep track of all the possible pages and interaction between the pages of the application and presented those to the project manager. He approved the mock and prototype. I managed to complete it within the 2 weeks. </p>
-
-								<p><strong>Styling and Campaign Abstraction:</strong> Because the CMS had not yet been implemented into the Admin site, I abstracted the styling and branding configuration into a folder using the ID for the campaign being used. The campaign is set by a data attribute on the script tag loading in the JS. This folder contained, SCSS, images and a JSON configuration file that manages all of the campaign information including environment variables. I developed the desktop application also using the MVC boilerplate I created.</p>
-								
-								<p><strong>Refactoring:</strong> Next task was to refactor the mobile version and abstract the styling. The mobile version was a single page app. The HTML page was huge containing all of the dynamic templates used within the HTML page. The CSS used no preprocessing engine. The JS contained 3 files each filled with global functions and containing (no joke) objects as large as 3000 lines of code. I was allowed 3 days for the initial refactoring and 1 week for the styling and campaign abstraction.</p> 
-
-								<p>First, I put in place Grunt because that would be the foundation for refactoring to be able to run Grunt tasks. I changed all of the CSS to SCSS files and broke them up into smaller more logical chunks. Ran them through Grunt to minify and concatenate them to single file with maps for easier development troubleshooting. </p>
-
-								<p>I added RequireJS and used Jquery extend to break up the the massive JS files and objects into smaller files. By using RequireJS and Jquery extend I could take a single object, break it up into as many logical files as I want and Jquery extend would pull them all together into a single object. RequireJS with Grunt would then allow me to minify and concatenate those JS so there would be no issue with race conditions having those files separated out. It was a very time efficient, non-intrusive solution. </p> 
-
-								<p>I removed the HTML templates from the main HTML file and put them each in a separate file and formatted them for <span class="hvr-pop"><a href="http://olado.github.io/doT/index.html" target="_blank">doT templates</a></span>. With that I am able to compile with Grunt, the templates into a JS file and have that JS file minified and concatenated with the other JS so it would have little network impact. </p>
-								
-								<p><strong>From JSON to CMS:</strong> Lastly, I had to take the configurations and styling from the JSON and implement those into the CMS. I did this a little bit at a time but in the end the JSON file was left only a few configuration variables and designers could then use the CMS to style the next campaign.</p>
-
-								<p><strong>This project went on to support campaigns for Hot Wheels, Crystal Light, Unilever (Suave, Tresemme, Axe), Walgreens, Walmart, and Kraft</strong></p>
-								
-								<ul>
-									<li>Here are screenshots for the desktop site I created: <span class="hvr-pop"><a href="http://tduppstadt.com/project/elite-receipt/EliteReceipt_Desktop_Screenshots.pdf" target="_blank">EliteReceipt_Desktop_Screenshots.pdf</a></span></li>
-									
-									<li>This is the developers documentation for configuring campaigns I put together: <span class="hvr-pop"><a href="http://tduppstadt.com/project/elite-receipt/EliteReceipt_FrontEnd_Config_Documentation.pdf" target="_blank">EliteReceipt_FrontEnd_Config_Documentation.pdf</a></span> </li>
-
-								</ul>
-							</div>
-						</div>
-
-
-						<!-- blue  -->
-						<div class="portfolio-item">
-							<div class="image"><a href="Content/images/global/blue-flow-full.jpg" target="_blank"><img src="Content/images/global/blue-flow.jpg"/></a></div>
-							<div class="copy">
-								<p><span class="title">Blue</span> was a pet project of mine as a solution for jump starting my projects. I call it Blue, as in 'Blue Collar', a simple, layman's approach to a framework that just helps you organize and engineer large scale or small applications from the ground up using a vanilla JS OOP style approach.</p>
-
-								<p><strong>A Little History:</strong> When I was developing in Flash AS3 I didn't know of any project frameworks (before Flex). I developed my own AS3 MVC framework which gave me a foundation for all my projects. The projects were extremely varied from presentation, training tool applications to games. Having this framework constantly evolving as I used it throughout my Flash career for about 5+ years, this gave me a solid understanding for what was required and how to develop a framework. </p>
-
-								<p><strong>Why I built it?</strong> When I first got into JavaScript, I had jumped in with both feet into a heavily customized Backbone boilerplate project with Walmart that would run for about 3 months. I looked into other frameworks like Knockout and Angular. Afterward in retrospect I took what I liked and what I didn't like. I worked in an environment with all levels of JS developers. Backbone and other frameworks seemed to make JavaScript not look like JavaScript anymore, and some even violated web standards. It was my opinion if you threw a new developer in the world of Backbone, Angular or many of the other frameworks, and then threw them into a regular JS project they wouldn't know what to do.</p> 
-
-								<p><strong>Success:</strong> This framework was a successful attempt at creating a framework that that could be used for any project of any size and to be maintainable and understood by developers of all levels providing they had an understanding of vanilla JS OOP using prototype and closures. It would also help the new JavaScript developer learn the ins and outs of a simple framework and relationships with their components. While learning best practices, coding habits, and skills that could be assimilated into any framework or used in developing an application from the ground up.</p>
-
-								<p>During my 3 years with Lunchbox I used this framework for nearly all my projects and also used it for mentoring. A few of the more successful applications created using Blue were Elite Receipt and Firestarter.</p>
-
-								<br>
-								<strong>Features:</strong>
-								<ul>
-									<li>Built on JQuery, RequireJS, doT, Validate, Grunt, SASS, and Bootstrap (optional)</li>
-
-									<li>Flexible for multi-page or pageless designs using routes through custom hash management. </li>
-
-									<li>JSON configurations are loaded into the model. An environment variable is used to compare against the url to determine your environment specific properties like API service URLs. It is also used for custom environment behaviors like disabling console log in production.</li>
-
-									<li>Ability to work using minified or un-minified JS for faster development and troubleshooting.</li>
-									
-									<li>Query strings are used for debug modes.</li>
-
-									<li>Form handling and validation using Validate, including inline validation capability when input is off focus.</li>
-
-									<li>Modal handling using dynamic templates.</li>
-
-									
-
-									<li>The custom build script calling Grunt tasks offer these options:
-										<ul>
-											<li>Min/concat JS and templates and creates source maps for debugging</li>
-											<li>Cache busting for js, json, and css files</li>
-											<li>Compile doT templates to JS</li>
-											<li>Compress PNG</li>
-											<li>Create spritesheets and generate SASS files</li>
-											<li>Watch and compile SCSS</li>
-										</ul>
-									</li>
-
-									<li>This shows the general flow for different compenents. <span class="hvr-pop"><a href="Content/images/global/blue-flow-full.jpg" target="_blank">blue-flow-full.jpg</a></span> </li>
-
-									<li>Here is a link to the framework. <span class="hvr-pop"><a href="http://tduppstadt.com/project/blue/" target="_blank">http://tduppstadt.com/project/blue/</a></span> </li>
-									
-								</ul>
-								
-							</div>
-						</div>
-
-
-						<!-- aacn  -->
-						<div class="portfolio-item">
-							<div class="image"><a href="Content/images/global/aacn-full.jpg" target="_blank"><img src="Content/images/global/aacn.jpg"/></a></div>
-							<div class="copy">														
-								<p><span class="title">American Association of Critical-Care Nurses (AACN)</span> <span class="hvr-pop"><a href="https://www.aacn.org/" target="_blank">https://www.aacn.org/</a></span>. It is a dashboard, store, education, and resource site dedicated to critical care nurses. I was a key team contributor to the entire site redesign. I optimized the development environment, created pages including the home page for responsive mobile first, templates, and modular components throughout the site including shopping carts, forms, invoice, custom accordion with configurable open and close options, and panel completion summaries. Built on RequireJS, Jquery, Backbone, Marionette, Bootstrap, Gulp, Make, SASS, Susy, and Sitecore. Included here are a collection of responsive solution modules developed by yours truly.</p>
-
-								<ul>
-									<li><strong>The homepage</strong> which I developed (which you can see on the actual site, or a demo here), is a complex collection of dynamic and responsive modules. Including responsive background images, slideshow, sign in form, article browser, certification browser, and chapter navigation mosaic. <span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/homepage-hero-module.html" target="_blank">http://tduppstadt.com/project/aacn/homepage-hero-module.html</a></span></li>
-									
-									<li><strong>NTI Events</strong> is a complex form for scheduling an itinerary. Rules and logic are based on ISO 8601 date/time format.  It includes rules behind the scenes for allowing for meals during certain times selected, restricting overlapping events, and restricting selections based on other selections.<span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/nti-events.html" target="_blank">http://tduppstadt.com/project/aacn/nti-events.html</a></span></li>
-
-									<li><strong>Dynamic accordion</strong> is a custom accordion I created from Bootstrap's accordion as the base. It was a solution developed to solve the problem of working with massive forms. It allows you to break up the form into logical sections. It's flexible usage makes it able to accommodate free flow where you can jump around to different panels or restrict the user to complete one section at a time. After a section is completed a summary of the user's selection is displayed into the header of that panel. The user may then go back to that panel to make edits then later resume completion. Further customization includes prepopulating the form and summaries based on API saves of each panel, this allows the user to leave the page, then based on the API and hash in the URL the user can pick up where you left off. 									
-										<ul>
-											<li>This shows how the accordion was used in a real world scenario. Because this is not hooked up to any API the summary information will not be populated as it is gathered from the API upon saving the panel; however, you can see the practical use and functionality of the accordion. <span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/nti-registration.html" target="_blank">http://tduppstadt.com/project/aacn/nti-registration.html</a></span>
-											<li>Here is an example of the dynamic accordion by itself. <span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/dynamic-accordion.html" target="_blank">http://tduppstadt.com/project/aacn/dynamic-accordion.html</a></span>
-										</ul>								
-									</li>
-
-									<li><strong>Responsive forms and custom interactive form elements</strong>
-										<ul>
-											<li><span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/membership-additional-info.html" target="_blank">http://tduppstadt.com/project/aacn/membership-additional-info.html</a></span></li>
-											<li><span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/membership-create-account-module.html" target="_blank">http://tduppstadt.com/project/aacn/membership-create-account-module.html</a></span></li>
-											<li><span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/create-active-membership.html" target="_blank">http://tduppstadt.com/project/aacn/create-active-membership.html</a></span></li>
-										</ul>
-									</li>
-
-									<li><strong>Responsive background module</strong> 
-										<ul>
-											<li>
-												<span class="hvr-pop"><a href="http://tduppstadt.com/project/aacn/responsive-background-module.html" target="_blank">http://tduppstadt.com/project/aacn/responsive-background-module.html</a></span></li>
-										</ul>
-											
-									</li>
-								</ul>
-							</div>			
-						</div>	
+					<span class="nav-button-spacer"> |</span> 
+					<span class="js-nav-button nav-button hvr-float-shadow" data-id="testimonials"><a class="nav-buttons font-arial-black" href="#testimonials"> Testimonials </a></span>
+					<!-- <span class="nav-button-spacer"> |</span>
+					<span class="js-nav-button hvr-float-shadow" data-id="contact"><a class="nav-buttons font-arial-black" href="#contact"> Contact</a></span> -->
 					
+				<nav> 
 
-						<!-- brandshop esp  -->
-						<div class="portfolio-item">
-							<div class="image"><a href="Content/images/global/esp-simple-full.jpg" target="_blank"><img src="Content/images/global/esp-simple.jpg"/></a></div>
-							<div class="copy">
-								<p><span class="title">Brandshop aka ESP (Enhanced Shelf Page)</span> was an innovative marketing solution developed for Walmart. This flexible 3 panel module is fully customizable through a JSON configuration file. Panels can be added, removed, reordered, can accommodate new panel types, and deep linking through an iframe. Current panel types include Product Browser, Watch Video, and Get Recommendation. </p>
+			</header>
+				
+			<main> </main>
 
-								<ul>
-									<li><strong>Documentation file:</strong> <span class="hvr-pop"><a href="http://tduppstadt.com/project/brandshop-simple/_docs/Brandshop.pdf" target="_blank">Brandshop.pdf</a></span></li>
-									<li><strong>JSON configuration file:</strong> <span class="hvr-pop"><a href="http://tduppstadt.com/project/brandshop-simple/includes/json/project-brandshop.json" target="_blank">project-brandshop.json</a></span></li>
-									<li><strong>Unilever Simple Skincare demo:</strong> <span class="hvr-pop"><a href="http://tduppstadt.com/project/brandshop-simple/" target="_blank">http://tduppstadt.com/project/brandshop-simple/</a></span>
-										<ul>
-											<li>This is an example of loading the same module through an <strong>iframe</strong> and deep linking directly into the Get Recommendations panel: <span class="hvr-pop"><a href="http://tduppstadt.com/project/brandshop-simple/iframeTest.html?bslink=2" target="_blank">http://tduppstadt.com/project/brandshop-simple/iframeTest.html?bslink=2</a></span></li>
+				
 
-										</ul>
-
-									</li>
-									<li>This demo for <strong>Unilever Clear Shampoo</strong> also includes a store browser module I created: <span class="hvr-pop"><a href="http://tduppstadt.com/project/brandshop-clear/" target="_blank">http://tduppstadt.com/project/brandshop-clear/</a></span>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-
-						<!-- product 360  -->
-						<div class="portfolio-item">
-							<div class="image"><a href="Content/images/global/product360-full.jpg" target="_blank"><img src="Content/images/global/product360.jpg"/></a></div>
-							<div class="copy">
-								<p><span class="title">Product 360</span> was an innovative marketing solution prototype. A collection of product images to simulate an interactive 3D rotation of the product. It includes tracking markers with tooltips to introduce specific features of the product. Behavior, product information, and marker data are customizable through a JSON file. Click and drag the product left and right to see the product rotate.</p>
-
-								<ul>
-									<li><strong>JSON configuration file:</strong> <span class="hvr-pop"><a href="http://tduppstadt.com/project/product360-shelf/includes/json/360-data.json" target="_blank">360-data.json</a></span> </li>
-									<li><strong>Demo</strong> as if on a Walmart page (open the modal then click and drag the product left and right to see the product rotate): <span class="hvr-pop"><a href="http://tduppstadt.com/project/product360-shelf" target="_blank">http://tduppstadt.com/project/product360-shelf</a></span> </li>
-								</ul>
-							</div>
-						</div>
-
-
-						<!-- find your strength  -->
-						<div class="portfolio-item">
-							<div class="image"><a href="Content/images/global/findYourStrength-full.jpg" target="_blank"><img src="Content/images/global/findYourStrength.jpg"/></a></div>
-							<div class="copy">
-								<p><span class="title">Find Your Strength</span> was a simple mobile module developed for Walmart to be used for a campaign for Degree Deodorant for men. Make your selections and you are presented with the recommended product. <span class="hvr-pop"><a href="http://tduppstadt.com/project/walmart-degree" target="_blank">http://tduppstadt.com/project/walmart-degree</a></span></p>
-							</div>
-						</div>
-
-
+				<!-- firestarter  -->
+				<!-- <div class="portfolio-item">
+					<div class="image"><a href="Content/images/global/.jpg" target="_blank"><img src="Content/images/global/.jpg"/></a></div>
+					<div class="copy">
+						<p></p>
 					</div>
+				</div> -->
 
-					<div class="testimonials">
+				<!-- 
 
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>I've had the opportunity to work with Thom at two agencies, Lunchbox and Blitz. Thom is and always has been, the go-to-guy to get serious front end work done. He needs no oversight, is very pro-active, and usually has the problem solved much faster than expected. He has been responsible for many projects' success and is many times, the unspoken factor. </p>
-								<p>Outside of work, he's one of the nicest, most giving and genuine people you will meet. It's because of that, he is such a great asset to any teams' chemistry and will always hit the ground running on day one.</p>
-								<p>Please reach out to me with any questions about my recommendation or my years working with Thom, thanks!</p>
-							</div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/malikjones/" target="_blank">Malik Jones</a></span></div>
-								<div class="title">Associate Director of Technology at Blitz<br>Associate Director of Technology at Lunchbox</div>
-							</div>
-						</div>
+					 
 
+					<ul>
+						<li><span class="hvr-pop"><a href="" target="_blank"></a></span> </li>
+					</ul>
+				-->
 
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>I have had the pleasure of working with Thom with couple different companies and he is exactly what I look for in a great developer. He has excellent problem solving skills and a passion for the craft. He can quickly get up to speed on new technologies and begin applying that knowledge to the company’s most challenging projects. </p>
-								<p>The best example was working on a large multi-million dollar Sitecore project for a client. He was able to quickly join the team and immediately was able to figure out a templated solution that the team was struggling to solve a variety of problems across the site. Thom’s excellent communication, teamwork and problem solving skills often shines through when working with the internal teams and clients alike. </p>
-								<p>Thom is a great guy, a great developer and he brings a great attitude to any team.</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/bradatwater/" target="_blank">Brad Atwater</a></span></div>
-								<div class="title">Sr. Director of Technology at Blitz<br>Director of Technology at Lunchbox</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>Give Thom a task, any task. Change the task requirements mid-stream. Forget it, change the requirements back to what they were. Now look at Thom. Thom has it covered. Be like Thom. He's getting it done to spec, on time, and bug free. Clients are stoked. His producer is stoked. The QA team is stoked. Everyone is stoked! Thom has proven once again he's a valuable asset to any project. Good going Thom!</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/aubreytaylor/" target="_blank">Aubrey Taylor</a></span></div>
-								<div class="title">Associate Tech Director at Blitz</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>Thom was an invaluable part of the FX team at BLITZ due to his work ethic, dependability and easy going personality. As his Tech Lead on all our FX projects for the past 9+ months I often had to throw new languages or libraries at Thom and he consistently accepted those challenges head on, delivering outstanding results each time. Due to his excellent communication and quality work he required very minimal oversight to get the job done right. His humbleness and positive attitude helped our entire team produce better work and impress our clients.</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/michael-tully-81ab9b3/" target="_blank">Michael Tully</a></span></div>
-								<div class="title">Associate Director of Technology at Blitz</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>Thom is a constant professional with an unbelievable work ethic and in-depth front-end knowledge of scalable web application development. He has helped LBOX, LLC develop many successful flagship products in the past years. He could find solutions to complex challenging problems and was always aware of the bigger picture and how individual items in the product affected the whole. His pragmatic approach along with a strong understanding of cross-device usability design has made him an invaluable source for the team.</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/lingpossible/" target="_blank">Ling Lee</a></span></div>
-								<div class="title">Sr. Marketing Manager, Analytics and Insights at Lunchbox</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>Thom's knowledge and experience helped us to deliver user friendly interfaces to our customers very quickly, keeping a clean, easy to understand and maintainable code base, he uses patterns and best practices in a daily basis; this is invaluable as time passes and code increases.</p>
-
-								<p>He has also shown leadership by mentoring less experienced Front End Developers, guiding their efforts to uphold high quality standards. </p>
-
-								<p>His communication skills are among his greatest assets; he is transparent, direct, respectful and trustworthy, he is the kind of person that will always dedicate a moment to help you when you have a question or a request. </p>
-
-								<p>I believe these qualities make Thom's involvement in a project conducive to Team Work and high morale, I can highly recommend him .</p>
-							</div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/luis-stuart-matamoros-loria-16066b22/" target="_blank">Luis Stuart Matamoros Loria</a></span></div>
-								<div class="title">Software Engineer at Prosoft contracted by Lunchbox</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>Thom has been a friend and mentor to me ever since I started at Lunchbox. He showed me the ropes, took me under his wing and helped me get acclimated with my new environment. He did this not because anyone told him to or because it was his job to do so, but because that's the type of person he is. When Thom is given ownership of a project, consider it done, he will manage expectations, delegate resources and make sure it's completed on time. He has a can-do attitude, knows how to work well with people and loves a good challenge. His work in the Innovations Department at Lunchbox has been nothing short of excellent. Thom would be an invaluable asset on any team.</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/zafarmehboob/" target="_blank">Zafar Mehboob</a></span></div>
-								<div class="title">Web Developer at Lunchbox</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>I have had the pleasure of working with Thom for over 9 years and he is a great asset to any team. He is a strong developer and equally as strong in his artwork skills. He has created designs and software for some of the top pharma companies in the world as well as having 3D animations and motion graphics pieces show up on numerous media pieces from TV to video games. He is an accomplished professional and someone that can always be counted on for quality work. He is always hungry to learn new technologies and is quick to implement them into new projects. Thom is very talented and will boost the quality of work for any company he works for.</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/jarrodamcdevitt/" target="_blank">Jarrod McDevitt</a></span></div>
-								<div class="title">Director of Animation at NuMedia Innovations Inc.<br> Digital Artist at Ballistic Pixel Lab</div>
-							</div>
-						</div>
-
-
-						<div class="testionial-item">
-							<div class="quote-icon"></div>							
-							<div class="copy">
-								<p>Every project Thom worked on was improved by his input. He has a talented creative eye and uses it well. Artists with his level of talent and enthusiasm are hard to find.</p></div>
-							<div class="author">
-								<div class="name"><span class="hvr-pop"><a href="https://www.linkedin.com/in/dworleyjr/" target="_blank">Donnie Worley</a></span></div>
-								<div class="title">Owner / Co-Founder / Senior Creative Director of Ballistic Pixel Lab</div>
-							</div>
-						</div>
-
-
-					</div>
-
-					<!-- firestarter  -->
-					<!-- <div class="portfolio-item">
-						<div class="image"><a href="Content/images/global/.jpg" target="_blank"><img src="Content/images/global/.jpg"/></a></div>
-						<div class="copy">
-							<p></p>
-						</div>
-					</div> -->
-
-					<!-- 
-
-						 
-
-						<ul>
-							<li><span class="hvr-pop"><a href="" target="_blank"></a></span> </li>
-						</ul>
-					-->
-
-				</main>
-			</div>
+			
 		</div>
 	</div>
 
@@ -389,7 +91,7 @@
    			data-page-structure = "single"
 			data-json           = "Content/json/project.json?v=1426896749601" 		
 			data-main           = "Content/js/project/config" 		
-			src                 = "Content/js/release/project.js?v=1426896749601">
+			src                 = "Content/js/release/project.js">
 		</script>
     
 

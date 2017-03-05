@@ -18,7 +18,12 @@ function (helpers)
 
         // page events
         window.tEvent.eventStr.EVENT_NEW_PAGE = "EVENT_NEW_PAGE";
+        window.tEvent.eventStr.EVENT_PAGE_LOADED = "EVENT_PAGE_LOADED";
         window.tEvent.eventStr.EVENT_LOAD_INDEX = "EVENT_LOAD_INDEX";
+        window.tEvent.eventStr.EVENT_LOAD_TESTIMONIALS = "EVENT_LOAD_TESTIMONIALS";
+        window.tEvent.eventStr.EVENT_LOAD_PORTFOLIO = "EVENT_LOAD_PORTFOLIO";
+        window.tEvent.eventStr.EVENT_LOAD_ABOUT = "EVENT_LOAD_ABOUT";
+        window.tEvent.eventStr.EVENT_LOAD_CONTACT = "EVENT_LOAD_CONTACT";
         
 
         // useful

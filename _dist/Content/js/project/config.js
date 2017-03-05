@@ -63,11 +63,22 @@ require.config(
 			deps: ['jquery']           
 		},
 
-		"common/router":
-		{
-			deps: ["spearfishHelpers", "common/model"]
+		"modules/smoothScroll":
+		{       
+			deps: ['jquery']           
 		},
 
+		"common/router":
+		{
+			deps: ["spearfishHelpers", 
+					"common/model",
+					"globalNav",
+					"index",
+					"testimonials",		
+					"portfolio",		
+					"about",		
+					"contact"	]
+		}
 	},
 
 	// Initialize the application with the main application file
@@ -75,16 +86,22 @@ require.config(
 		"jquery",
 		"EventTarget",
 		"Templates",
-		//"gsCSSPlugin",
-		//"gsTweenLite",
+		"gsCSSPlugin",
+		"gsTweenLite",
 		"spearfishHelpers",
+
 		//"notify",
 		//"bootstrap",
-		//"jHammer",
+		//"jHammer",		
 		
-		"common/router",
 		"globalNav",
-		"index"		
+		"index",
+		"testimonials",		
+		"portfolio",		
+		"about",		
+		//"contact",	
+
+		"common/router" // keep last	
 	]
 
 

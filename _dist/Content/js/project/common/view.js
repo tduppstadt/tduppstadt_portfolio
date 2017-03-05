@@ -20,7 +20,9 @@ function (model, services)
         
         // core objects
         this.oModel    = model;   
-        this.oServices = services;  
+        this.oServices = services; 
+
+        this.$main = $("main"); 
     };
 
     var methods =
@@ -44,7 +46,7 @@ function (model, services)
         assignListeners: function()
         {
             var self = this;    
-        }
+        },
 
         // --------------------------------------------------------------
         // HELPERS
@@ -54,7 +56,24 @@ function (model, services)
         // --------------------------------------------------------------
         // EVENTS
         // --------------------------------------------------------------      
-        
+        // ______________________________________________________________
+        //                                          loadPageFrameTemplate
+        loadPageTemplate: function(template)
+        {       
+            this.$main.css("opacity", "0");
+            this.$main.html(template);
+            TweenLite.to(this.$main, 0.5, {opacity: 1});
+
+            this.pageLoaded();
+        },
+
+
+        // ______________________________________________________________
+        //                                                     pageLoaded
+        pageLoaded: function()
+        { 
+            window.tEvent.fire(window.tEvent.eventStr.EVENT_PAGE_LOADED);
+        }
 
     };
 

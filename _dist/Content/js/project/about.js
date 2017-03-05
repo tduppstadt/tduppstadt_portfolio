@@ -8,13 +8,14 @@ function (view, formLogin)
 
     // ---------------------------------------------------------------
     //
-    // PAGE INDEX
+    // PAGE ABOUT
     //
     // ---------------------------------------------------------------
 
     var constructor = function ()
     {
         this.oView = view;
+
         this.oForm = formLogin;
         
         this.init();
@@ -30,7 +31,7 @@ function (view, formLogin)
         //                                                           init
         init: function()
         {           
-            console.log(" * <index>");
+            console.log(" * <about>");
          
             this.assignListeners();
         },
@@ -42,7 +43,7 @@ function (view, formLogin)
         {          
             var self = this;
 
-            window.tEvent.addListener(window.tEvent.eventStr.EVENT_LOAD_INDEX, function(evt, data)
+            window.tEvent.addListener(window.tEvent.eventStr.EVENT_LOAD_ABOUT, function(evt, data)
             {
                 self.onPageLoad(data);   
             }); 
@@ -77,8 +78,8 @@ function (view, formLogin)
         //                                                     onPageLoad
         onPageLoad: function(data)
         {   
-            console.log(" * <index.onPageLoad>");
-            this.oView.loadPageTemplate(window.oTemplates.p_index());
+            console.log(" * <about.onPageLoad>");
+            this.oView.loadPageTemplate(window.oTemplates.p_about());
 
         },
 
