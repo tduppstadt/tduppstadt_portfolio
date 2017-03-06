@@ -57,9 +57,12 @@ function (hash, view)
             window.tEvent.addListener(window.tEvent.eventStr.EVENT_PAGE_LOADED, function(evt, data)
             {
                 setTimeout(function(){ self.hashCheck(); }, 300);
-
             });
 
+            window.tEvent.addListener(window.tEvent.eventStr.EVENT_RETRY_ANCHOR, function(evt, data)
+            {
+                setTimeout(function(){ self.hashCheck(); }, 300);
+            });
 
             // add anchor click to the hash
             $("body").on("click", this.ui.anchor, function(){

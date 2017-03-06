@@ -37,6 +37,9 @@ $responsive-max-width: 640;
   src: url(./fonts/OpenSans-ExtraBold.ttf);
 }
 
+.font-arial {
+	font-family: Arial, Geneva, sans-serif;
+}
 
 .font-verdana {
 	font-family: Verdana, Geneva, sans-serif;
@@ -82,6 +85,60 @@ a
 // ----------------------------------
 // global assets
 // ----------------------------------
+
+
+//lightbox background 
+.lg-backdrop.in {
+	
+	background-color: initial;
+	background-image: url($globalImagePath + "lightbox-bg-pattern.png");
+
+	&.in{
+		opacity: 0.80;
+	}
+}
+.lg-object {
+	// add shadow 
+	-webkit-box-shadow: 31px 43px 73px -8px rgba(0,0,0,0.63);
+	-moz-box-shadow: 31px 43px 73px -8px rgba(0,0,0,0.63);
+	box-shadow: 31px 43px 73px -8px rgba(0,0,0,0.63);
+
+	border: 1px solid #565252;
+}
+.lg-outer {
+	.lg-thumb-item {
+	    border: 1px solid #565252;
+	    border-radius: 0px;
+
+	    &.active, &:hover {
+	    	 border: 2px solid #903d3b;
+	    }
+	}
+}
+
+@-webkit-keyframes blur {
+  0%  { -webkit-filter: blur(0px); }
+  100% { -webkit-filter: blur(10px); }
+}
+@-moz-keyframes blur {
+  0%  { -moz-filter: blur(0px); }
+  100% { -moz-filter: blur(10px); }
+}
+body.lg-on{
+	.wrapper {
+		animation-name: blur;
+	    animation-duration: 1s;
+	    animation-fill-mode: forwards;
+	    -webkit-animation-name: blur;
+	    -webkit-animation-duration: 1s;
+	    -webkit-animation-fill-mode: forwards;
+	    -moz-animation-name: blur;
+	    -moz-animation-duration: 1s;
+	    -moz-animation-fill-mode: forwards;
+	}
+}
+
+
 .button
 {
 	text-align       : center;

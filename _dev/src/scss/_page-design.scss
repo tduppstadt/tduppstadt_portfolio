@@ -1,0 +1,48 @@
+.page-design {
+	
+	.lg-constrain {
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 60px;		
+	}
+
+	.lightgallery {		
+		a {
+			background-color: black;
+		}
+
+		img {
+			transform: scale(.85);
+			-moz-transform: scale(.85);
+			-webkit-transform: scale(.85);
+		}
+	}
+
+	
+	.section-title {
+	    border-top: 1px solid #ccc;
+	    border-bottom: 1px solid #ccc;
+	    padding-top: 20px;
+	    padding-bottom: 20px;
+	    font-size: 23px;
+	    margin-bottom: 11px;
+	    color: #555;
+	    text-align: center;
+	    background-color: rgba(236, 236, 236, 0.4);
+	    position: relative;
+
+	    .backToTop {
+	    	position: absolute;
+	    	top: 23px;
+    		right: 0px;
+	    }
+	}
+
+	.bottom-container {
+		border-bottom: 1px solid #ccc;
+	    padding-bottom: 20px;
+	    margin-bottom: 60px;
+	}
+
+}
+

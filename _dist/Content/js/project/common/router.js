@@ -111,10 +111,10 @@ function (hash, model)
                         loadEvent  : window.tEvent.eventStr.EVENT_LOAD_TESTIMONIALS
                     } ,
 
-                    portfolio:
+                    development:
                     {
-                        hashString : "portfolio",
-                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_PORTFOLIO
+                        hashString : "development",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_DEVELOPMENT
                     },
 
                     about:
@@ -127,6 +127,12 @@ function (hash, model)
                     {
                         hashString : "contact",
                         loadEvent  : window.tEvent.eventStr.EVENT_LOAD_CONTACT
+                    },
+
+                    design:
+                    {
+                        hashString : "design",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_DESIGN
                     }
                 }
                 
