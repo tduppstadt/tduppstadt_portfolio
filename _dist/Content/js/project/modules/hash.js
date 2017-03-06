@@ -19,9 +19,9 @@
     for 'about' and the object passed through the event will be '{page: "about", id: "4"}';
     
 */
-
-(function () 
-{
+define([
+], 
+function () {
 
     // ---------------------------------------------------------------
     //
@@ -45,7 +45,6 @@
                 event: "EVENT_PAGE_ABOUT_US"
             }
         */
-        this.init();
     };
        
     var methods =
@@ -68,38 +67,52 @@
             var self = this;
 
             this.allowHash = true;
-            window.onhashchange = function()
-            {      
-                window.tEvent.fire(window.tEvent.eventStr.EVENT_NEW_PAGE);
-                // check for allowing updates based on hash                
-                if (!self.allowHash) 
-                {
-                    self.allowHash = true;
-                    return;
-                }
 
-                if (location.hash === "" && self.pageModel["default"])
-                {
-                    window.tEvent.fire(self.pageModel["default"].event, hashObj);
-                }
-                else
-                {
-                    // call hash event
-                    var hashObj = self.parseHashObj();
-                    for (var key in self.pageModel)
-                    {
-                        if (hashObj.page === key)
-                        {
-                            window.tEvent.fire(self.pageModel[key].event, hashObj);
-                            break;
-                        }
-                    }
-                }   
+            
+            $(window).bind('hashchange', function() {
+                self.dohashchange();
+            });
 
-            };
+            /*
+            $(window).bind('hashchange', function() {
+            */
+            this.dohashchange();
         },
 
         
+        // ______________________________________________________________
+        //                                                   dohashchange
+        dohashchange: function()
+        {
+            // call hash event
+            var hashObj = this.parseHashObj();
+
+            // call event for a new page is coming
+            window.tEvent.fire(window.tEvent.eventStr.EVENT_NEW_PAGE, hashObj);
+
+            // check for allowing updates based on hash                
+            if (!this.allowHash) 
+            {
+                this.allowHash = true;
+                return;
+            }                
+
+            if (location.hash === "" && this.pageModel["default"])
+            {
+                window.tEvent.fire(this.pageModel["default"].event, hashObj);
+            }
+            else
+            {                    
+                for (var key in this.pageModel)
+                {
+                    if (hashObj.page === key)
+                    {
+                        window.tEvent.fire(this.pageModel[key].event, hashObj);
+                        break;
+                    }
+                }
+            }
+        },
 
         // --------------------------------------------------------------
         // HELPERS
@@ -123,7 +136,12 @@
 
             for (var i = 0; i < hashArray.length; i++)
             {
-                 hashObj[hashArray[i].split("=")[0]] = hashArray[i].split("=")[1];
+                if (hashArray[i].split("=")[1] === undefined){
+                    hashObj.page = hashArray[i].split("=")[0];
+                } else {
+                    hashObj[hashArray[i].split("=")[0]] = hashArray[i].split("=")[1];
+                }
+                 
             }
 
             return (hashObj);
@@ -144,6 +162,7 @@
         {
             this.allowHash = false;
             location.hash = str;
+            this.allowHash = true;
         },
 
 
@@ -166,8 +185,10 @@
 
     var Class = constructor;
     Class.prototype = methods;
+    var oHash = new Class();
+    /*if (window._hash === undefined)
+        window._hash = oHash;*/
 
-    if (window._hash === undefined)
-        window._hash = new Class();
+    return (oHash);
 
-})();
+});

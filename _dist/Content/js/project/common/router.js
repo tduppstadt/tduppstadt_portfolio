@@ -15,7 +15,7 @@ define([
     "common/model"
 ],
 
-function (_hash, model) 
+function (hash, model) 
 {
 
     // ---------------------------------------------------------------
@@ -23,7 +23,6 @@ function (_hash, model)
     // ROUTER
     //
     // ---------------------------------------------------------------
-    
 
     var Router = function()
     {       
@@ -38,8 +37,11 @@ function (_hash, model)
 
         // core objects
         this.oModel = model;     
+        this.oHash = hash;
 
         this.oActivePage = {};
+
+        this.initPageModel();
 
         this.init();  
     };
@@ -70,7 +72,8 @@ function (_hash, model)
             console.log(" * <router.init> data-page-structure: " + structure);
             switch(structure)
             {
-                case this.PAGE_STRUCTURE_SINGLE:       
+                case this.PAGE_STRUCTURE_SINGLE:  
+                    this.oHash.init();     
                     break;
 
                 case this.PAGE_STRUCTURE_MULTI:
@@ -82,6 +85,7 @@ function (_hash, model)
                     break;  
             }
 
+
         },
         
         // ______________________________________________________________
@@ -92,24 +96,66 @@ function (_hash, model)
         */
         initPageModel: function()
         {
-             this.pageModel = 
+            this.pageModel = 
             {
-                section:
-                {
+                page: {
                     index:
                     {
-                        hashString : "index",
+                        hashString : "default",
                         loadEvent  : window.tEvent.eventStr.EVENT_LOAD_INDEX
+                    },
+
+                    testimonials:
+                    {
+                        hashString : "testimonials",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_TESTIMONIALS
+                    } ,
+
+                    development:
+                    {
+                        hashString : "development",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_DEVELOPMENT
+                    },
+
+                    about:
+                    {
+                        hashString : "about",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_ABOUT
+                    },
+
+                    contact:
+                    {
+                        hashString : "contact",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_CONTACT
+                    },
+
+                    design:
+                    {
+                        hashString : "design",
+                        loadEvent  : window.tEvent.eventStr.EVENT_LOAD_DESIGN
                     }
                 }
+                
             };
 
-            // give model page model ref
+            // give model page model ref            
             this.oModel.pageModel = this.pageModel;
+
+            // register hash
+            var temp;
+            for (var key in this.pageModel.page) {
+                temp = this.pageModel.page[key];
+                this.oHash.pushHashEvent(temp.hashString, temp.loadEvent);
+            }
+
+            
         },
 
+
+
+
         // ______________________________________________________________
-        //                                                       initHash
+        //                                                 loadActivePage
         /* 
                 Used for multi page apps,
                 instantiate the class based on html data-page-id

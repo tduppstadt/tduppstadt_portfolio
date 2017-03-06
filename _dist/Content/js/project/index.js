@@ -15,7 +15,6 @@ function (view, formLogin)
     var constructor = function ()
     {
         this.oView = view;
-
         this.oForm = formLogin;
         
         this.init();
@@ -43,10 +42,17 @@ function (view, formLogin)
         {          
             var self = this;
 
-            window.tEvent.addListener(window.tEvent.eventStr.EVENT_LOAD_INDEX, function(evt)
+            window.tEvent.addListener(window.tEvent.eventStr.EVENT_LOAD_INDEX, function(evt, data)
             {
-                self.onPageLoad();   
-            });            
+                self.onPageLoad(data);   
+            }); 
+
+
+            window.tEvent.addListener(window.tEvent.eventStr.EVENT_NEW_PAGE, function(evt, data)
+            {
+                // clean up for new page
+                self.onCleanUp();
+            });           
         },
 
         // ______________________________________________________________
@@ -69,9 +75,19 @@ function (view, formLogin)
         // --------------------------------------------------------------
         // ______________________________________________________________
         //                                                     onPageLoad
-        onPageLoad: function()
+        onPageLoad: function(data)
         {   
             console.log(" * <index.onPageLoad>");
+            this.oView.loadPageTemplate(window.oTemplates.p_index());
+
+        },
+
+        // ______________________________________________________________
+        //                                                     onCleanUp
+        // clean up when new page is loaded.
+        onCleanUp: function()
+        {   
+
         }
 
     };

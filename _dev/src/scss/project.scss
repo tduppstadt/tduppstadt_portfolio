@@ -12,15 +12,25 @@
 @import "thirdParty/bootstrap/bootstrap";
 @import "support/helper-classes";
 
+// hover master
 @import "thirdParty/hover-master/hacks";
 @import "thirdParty/hover-master/mixins";
 @import "thirdParty/hover-master/options";
 @import "thirdParty/hover-master/hover";
 
+// light gallery
+@import "thirdParty/light-gallery/lightgallery";
+@import "thirdParty/light-gallery/lg-transitions";
 
+@import "thirdParty/justifiedGallery";
 
 // custom
 @import "global-project";
 @import "forms";
 
 @import "page-index";
+@import "page-about";
+@import "page-contact";
+@import "page-development";
+@import "page-testimonials";
+@import "page-design";

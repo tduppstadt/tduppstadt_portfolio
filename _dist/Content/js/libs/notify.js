@@ -16,19 +16,23 @@ window.oNotify.registerTask(
 {
   groupName: "MyTasks",
   taskList: ["item1", "item2", "item3"],
-  onUpdate: function(itemId)
+  onUpdate: function(itemId, optionalData)
   {
     console.log("Finished Item:", itemId);
   },
   onDone: function()
   {
      console.log("Your list is completed"); 
+  },
+  onAbort: function(itemId)
+  {
+    console.log("Task aborted by", itemId);
   }
 });
 
 
 // update tasks
-window.oNotify.MyTasks.update("item1");
+window.oNotify.MyTasks.update("item1", optionalData);
 window.oNotify.MyTasks.update("item2");
 window.oNotify.MyTasks.update("item3");
 
@@ -36,10 +40,11 @@ window.oNotify.MyTasks.update("item3");
 // abort tasks
 window.oNotify.MyTasks.abort();
 
+// abort identifying task
+window.oNotify.MyTasks.abort("item2");
 
 // get task group status
 window.oNotify.MyTasks.status();
-
 
 // get all task groups status
 window.oNotify.status();
@@ -57,7 +62,7 @@ window.oNotify[NOTIFY_GROUP_MYTASKS].update(NOTIFY_TASK_ITEM1);
 or
 
 nMyTasks = window.oNotify.MyTasks;
-nMyTasks.update(NOTIFY_TASK_ITEM1);
+nMyTasks.update(NOTIFY_TASK_ITEM1, optionalData);
 
 Also, define event strings
 // use this if more than one task groups exist within the class
@@ -71,13 +76,7 @@ NOTIFY_EVENT_DONE
     // ---------------------- 
     // Notify  
     // ----------------------
-    var Notify = function() 
-    {
-
-    };
-
-    Notify.prototype = 
-    {
+    var Notify = {
         // ______________________________________________________________
         //                                                   registerTask
         registerTask: function(data) 
@@ -100,7 +99,7 @@ NOTIFY_EVENT_DONE
             return (result);
         }
     };
-    window.oNotify = new Notify();
+    window.oNotify = window.oNotify || Object.create(Notify);
 
 
     // ---------------------- 
@@ -118,6 +117,9 @@ NOTIFY_EVENT_DONE
 
         this.onDone = function(){ return; };
         if (data.onDone) this.onDone = data.onDone;
+      
+        this.onAbort = function(){ return; };
+        if (data.onAbort) this.onAbort = data.onAbort;
 
         this.completedList = [];
         for (var i = 0; i < this.taskList.length; i++) 
@@ -130,7 +132,7 @@ NOTIFY_EVENT_DONE
     {
         // ______________________________________________________________
         //                                                         update
-        update: function(itemId) 
+        update: function(itemId, optionalData) 
         {
             // check if aborted
             if (this.isAborted) return;
@@ -145,7 +147,7 @@ NOTIFY_EVENT_DONE
             }
 
             // fire onUpdate
-            this.onUpdate(itemId);
+            this.onUpdate(itemId, optionalData);
 
             // check if completed
             var completedCount = 0;
@@ -161,9 +163,10 @@ NOTIFY_EVENT_DONE
 
         // ______________________________________________________________
         //                                                          abort
-        abort: function() 
+        abort: function(itemId) 
         {
             this.isAborted = true;
+            this.onAbort(itemId);
         },
 
         // ______________________________________________________________
