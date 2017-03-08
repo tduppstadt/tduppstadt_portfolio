@@ -102,12 +102,12 @@ function (view, formLogin)
             // notify when both galleries are loaded so 
             window.oNotify.registerTask(
             {
-              groupName: "Design_Galleries_Loaded",
-              taskList: ["interface", "print"],             
-              onDone: function()
-              {                
-                window.tEvent.fire(window.tEvent.eventStr.EVENT_RETRY_ANCHOR);
-              }
+                groupName: "Design_Galleries_Loaded",
+                taskList: ["interface", "print"],             
+                onDone: function()
+                {                
+                    window.tEvent.fire(window.tEvent.eventStr.EVENT_RETRY_ANCHOR);
+                }
             });
 
 

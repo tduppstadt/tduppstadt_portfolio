@@ -55,7 +55,7 @@ $responsive-max-width: 640;
 html,
 body
 {	
-	background-color : white;
+	background-color : black;
 	color            : block;
 	@include mainFont;	
 }
@@ -267,7 +267,7 @@ body.lg-on{
 .constrain {
 	top: 20px;
 	box-sizing: border-box;
-	background-color: white;	
+	background-color: black;	
 	position: relative;	
 	margin-left: auto;
 	margin-right: auto;

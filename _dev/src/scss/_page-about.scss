@@ -32,13 +32,16 @@
 
 		.profile-img {
 		    max-width: 410px;
-		    padding-right: 20px;
-		    padding-bottom: 5px;
+		    margin-right: 25px;
+    		margin-bottom: 5px;
 		    width: 100%;
-		    
+			-webkit-box-shadow: 2px 2px 8px 1px grey;
+			-moz-box-shadow: 2px 2px 8px 1px gray;
+			box-shadow: 2px 2px 8px 1px grey;
+
 		    @media only screen and (max-width : 550px){		
-			    padding-right: 0px;
-				padding-bottom: 30px;
+			    margin-right: 0px;
+				margin-bottom: 30px;
 				max-width: 100%;
 			}
 		}		

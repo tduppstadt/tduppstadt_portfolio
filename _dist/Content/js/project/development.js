@@ -81,6 +81,14 @@ function (view, formLogin)
             console.log(" * <development.onPageLoad>");
             this.oView.loadPageTemplate(window.oTemplates.p_development());
 
+            $(".lg-portfolio-item").lightGallery({
+                mode: 'lg-zoom-in-big',
+                //cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
+                preload: 2,
+                download: false,
+                hash: false,
+                counter: false
+            });
         },
 
         // ______________________________________________________________

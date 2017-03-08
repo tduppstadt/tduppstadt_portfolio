@@ -22,6 +22,9 @@ function (model, services)
         this.oModel    = model;   
         this.oServices = services; 
 
+        // check if initial load has been completed
+        this.siteLoaded = false;
+
         this.$main = $("main"); 
     };
 
@@ -73,6 +76,43 @@ function (model, services)
         pageLoaded: function()
         { 
             window.tEvent.fire(window.tEvent.eventStr.EVENT_PAGE_LOADED);
+
+            if (!this.siteLoaded) {
+                this.backgroundLoadCheck();                
+            }            
+        },
+
+        // ______________________________________________________________
+        //                                            backgroundLoadCheck
+        backgroundLoadCheck: function()
+        { 
+
+            var self = this;
+            
+            // notify when background images are loaded 
+            // then fade in interface
+            window.oNotify.registerTask(
+            {
+                groupName: "MainBackgroundLoaded",
+                taskList: ["canvas", "paper"],             
+                onDone: function()
+                {         
+                    console.log("done");       
+                    self.siteLoaded = true;
+                    TweenLite.to($("body"), 1, {
+                      opacity: 1
+                    });
+                }
+            });
+
+            $('<img/>').load("Content/images/global/paper.jpg", function() {
+               $(this).remove(); // prevent memory leaks
+               window.oNotify.MainBackgroundLoaded.update("paper");
+            });
+            $('<img/>').load("Content/images/global/canvas.jpg", function() {
+               $(this).remove(); // prevent memory leaks
+               window.oNotify.MainBackgroundLoaded.update("canvas");
+            });
         }
 
     };
