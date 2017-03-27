@@ -26,6 +26,8 @@ function (model, services)
         this.siteLoaded = false;
 
         this.$main = $("main"); 
+
+        this.init();
     };
 
     var methods =
@@ -49,6 +51,22 @@ function (model, services)
         assignListeners: function()
         {
             var self = this;    
+
+            // thumb anim for light gallery items
+            $("body").on('mouseenter','.lightgallery img',function() {
+                TweenLite.to($(this), 0.5, {
+                  scale: 1,
+                  force3D:true,
+                  ease: Power4.easeOut
+                });
+            }).on('mouseleave', '.lightgallery img', function() {
+                TweenLite.to($(this), 0.5, {
+                  scale: 0.85,
+                  force3D:true,
+                  ease: Power4.easeOut
+                });
+            });
+
         },
 
         // --------------------------------------------------------------
@@ -65,7 +83,7 @@ function (model, services)
         {       
             this.$main.css("opacity", "0");
             this.$main.html(template);
-            TweenLite.to(this.$main, 0.5, {opacity: 1});
+            TweenLite.to(this.$main, 1, {opacity: 1});
 
             this.pageLoaded();
         },
@@ -88,7 +106,7 @@ function (model, services)
         { 
 
             var self = this;
-            
+
             // notify when background images are loaded 
             // then fade in interface
             window.oNotify.registerTask(
@@ -96,15 +114,27 @@ function (model, services)
                 groupName: "MainBackgroundLoaded",
                 taskList: ["canvas", "paper"],             
                 onDone: function()
-                {         
-                    console.log("done");       
+                {      
+                    // will prevent this call again.
                     self.siteLoaded = true;
-                    TweenLite.to($("body"), 1, {
+
+                    // clear the fail safe timeout
+                    clearTimeout(timer);
+
+                    // hide the loader
+                    $(".js-global-loader").css("display", "none");
+
+                    // reveal the interface
+                    TweenLite.to($(".js-content"), 1, {
                       opacity: 1
                     });
                 }
             });
 
+            // fail safe in case the loaders fail.
+            var timer = setTimeout(function(){ window.oNotify.MainBackgroundLoaded.onDone(); }, 5000);            
+
+            // test load the bg images
             $('<img/>').load("Content/images/global/paper.jpg", function() {
                $(this).remove(); // prevent memory leaks
                window.oNotify.MainBackgroundLoaded.update("paper");

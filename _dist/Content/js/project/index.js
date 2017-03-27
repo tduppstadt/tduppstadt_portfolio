@@ -80,6 +80,19 @@ function (view, formLogin)
             console.log(" * <index.onPageLoad>");
             this.oView.loadPageTemplate(window.oTemplates.p_index());
 
+            // design gallery
+            $(".design-container").lightGallery({
+                mode: 'lg-zoom-in-big',
+                //cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
+                preload: 2,
+                download: false,
+                hash: false
+            }).justifiedGallery({
+                rowHeight: 120,
+                maxRowHeight: 120,
+                lastRow: "justify"
+            });
+
         },
 
         // ______________________________________________________________

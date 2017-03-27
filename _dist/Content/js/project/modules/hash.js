@@ -97,21 +97,13 @@ function () {
                 return;
             }                
 
-            if (location.hash === "" && this.pageModel["default"])
-            {
-                window.tEvent.fire(this.pageModel["default"].event, hashObj);
-            }
-            else
-            {                    
-                for (var key in this.pageModel)
-                {
-                    if (hashObj.page === key)
-                    {
-                        window.tEvent.fire(this.pageModel[key].event, hashObj);
-                        break;
-                    }
-                }
-            }
+            if (typeof this.pageModel[hashObj.page] !== "undefined" ){
+                window.tEvent.fire(this.pageModel[hashObj.page].event, hashObj); 
+            } else if (typeof this.pageModel.default !== "undefined"){
+                window.tEvent.fire(this.pageModel.default.event, hashObj);
+            } else {
+                window.location.hash = "";
+            }  
         },
 
         // --------------------------------------------------------------

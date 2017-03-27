@@ -55,20 +55,7 @@ function (view, formLogin)
                 self.onCleanUp();
             });     
 
-            // thumb anim
-            $(document).on(' mouseenter','.lightgallery img',function() {
-                TweenLite.to($(this), 0.5, {
-                  scale: 1,
-                  force3D:true,
-                  ease: Power4.easeOut
-                });
-            }).on('mouseleave', '.lightgallery img', function() {
-                TweenLite.to($(this), 0.5, {
-                  scale: 0.85,
-                  force3D:true,
-                  ease: Power4.easeOut
-                });
-            });
+
 
         },
 
@@ -78,8 +65,6 @@ function (view, formLogin)
         {          
             var self = this;
         },
-
-        
 
 
         // --------------------------------------------------------------
@@ -100,12 +85,10 @@ function (view, formLogin)
 
             
             // notify when both galleries are loaded so 
-            window.oNotify.registerTask(
-            {
+            window.oNotify.registerTask({
                 groupName: "Design_Galleries_Loaded",
                 taskList: ["interface", "print"],             
-                onDone: function()
-                {                
+                onDone: function(){                
                     window.tEvent.fire(window.tEvent.eventStr.EVENT_RETRY_ANCHOR);
                 }
             });
