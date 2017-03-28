@@ -1,0 +1,12 @@
+$imagePathPrefix: "../images/";
+$globalImagePath: $imagePathPrefix + "global/";
+
+@mixin mainFont
+{
+	font-family: sans-serif;
+}
+
+@font-face {
+  font-family: 'OpenSans-ExtraBold';
+  src: url(./fonts/OpenSans-ExtraBold.ttf);
+}

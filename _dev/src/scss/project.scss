@@ -1,14 +1,9 @@
-// ---------------------------------------------------------------
-//
-// VARIABLES
-//
-// --------------------------------------------------------------- 
+
 
 // libraries
 @import "support/reset";
 @import "support/normalize";
 @import "support/improved";
-@import "support/responsive";
 @import "thirdParty/bootstrap/bootstrap";
 @import "support/helper-classes";
 
@@ -25,12 +20,12 @@
 @import "thirdParty/justifiedGallery";
 
 // custom
-@import "global-project";
-@import "forms";
+@import "variables";
+@import "base";
+@import "layout";
 
 @import "page-index";
 @import "page-about";
-@import "page-contact";
 @import "page-development";
 @import "page-testimonials";
 @import "page-design";

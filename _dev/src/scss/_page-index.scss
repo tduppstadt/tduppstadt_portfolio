@@ -1,19 +1,4 @@
-
-
-// ---------------------------------------------------------------
-//
-// VARIABLES
-//
-// --------------------------------------------------------------- 
-
-
-
-// ---------------------------------------------------------------
-//
-// CSS
-//
-// ---------------------------------------------------------------
-
+@import "variables";
 
 .page-index {
 
@@ -34,116 +19,58 @@
 	.image-col {
 		text-align: center;
 		margin-bottom: 40px;
-	}
+		
+		&__title {
+			text-align: center;
+			font-size: 19px;
+	    	padding-bottom: 15px;
 
-	.image {
+	    	&__subtitle {
+			    color: #999;
+			    font-size: 12px;
+			    font-style: italic;
+			    margin-top: -13px;
+			    position: relative;
+			    margin-bottom: -4px;
+			    white-space: nowrap;
 
-		@extend .hvr-pulse;
-
-
-
-		img {
-
-			width: 100%;		
-			-webkit-box-shadow: 2px 2px 8px 1px rgba(128,128,128,1);
-			-moz-box-shadow: 2px 2px 8px 1px rgba(128,128,128,1);
-			box-shadow: 2px 2px 8px 1px rgba(128,128,128,1); 
-
-			@media only screen and (max-width : 400px){		
-				//width: 250px;
+				@extend .font-verdana;
 			}
 
 		}
+		
+		&__image {
 
-		@media only screen and (max-width : 1024px){		
-			//float: none;
-			//margin-right: 0px;
+			@extend .hvr-pulse;
+
+
+
+			img {
+
+				width: 100%;		
+				-webkit-box-shadow: 2px 2px 8px 1px rgba(128,128,128,1);
+				-moz-box-shadow: 2px 2px 8px 1px rgba(128,128,128,1);
+				box-shadow: 2px 2px 8px 1px rgba(128,128,128,1); 
+
+				@media only screen and (max-width : 400px){		
+					//width: 250px;
+				}
+
+			}
+
+			@media only screen and (max-width : 1024px){		
+				//float: none;
+				//margin-right: 0px;
+			}
+		
 		}
-	
 	}
 
-	.image-title {
-		text-align: center;
-		font-size: 19px;
-    	padding-bottom: 15px;
-	}
-
-	.subtitle {
-	    color: #999;
-	    font-size: 12px;
-	    font-style: italic;
-	    margin-top: -13px;
-	    position: relative;
-	    margin-bottom: -4px;
-	    white-space: nowrap;
-
-		@extend .font-verdana;
-	}
 
 	.testimonials {
 		margin-top: 10px;
 	    border-top: 1px #ccc solid;
 	    padding-top: 60px;
-	}
-
-	.testionial-item {
-
-		border: 1px solid #ccc;
-		padding: 20px;
-		
-		max-width: 850px;
-	    margin-left: auto;
-	    margin-right: auto;
-	    padding-right: 50px;
-		padding-left: 50px;
-		padding-bottom: 35px;
-		margin-bottom: 40px;
-		background-color: #f9f9f9;
-	    /* RGBa with 0.6 opacity */
-	    background-color: rgba(236, 236, 236, 0.4);
-	    
-
-		.quote-icon {
-			background-image: url("../images/global/quote-icon.png");
-			width: 34px;
-			height: 31px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-
-		.author {
-		    text-align: center;
-		    margin-top: 30px;
-
-			.name {
-				font-weight: bold;
-			    font-size: 18px;
-			    color: #555;	
-
-			    a {
-					&:link,
-					&:visited,
-					&:hover,
-					&:active
-					{
-						color: #555;
-					}
-				}
-
-			}
-
-			.title {
-				color: #777;
-				font-size: 12px;
-			}
-		}
-
-		.copy {
-			text-align: center;
-		}
-
 	}
 
 	.see-more-link {

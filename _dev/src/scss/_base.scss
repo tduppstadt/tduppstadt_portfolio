@@ -1,0 +1,66 @@
+@import "variables";
+
+
+// ----------------------------------
+// base elements
+// ----------------------------------
+html,
+body
+{	
+	background-color : black;
+	color            : block;
+	@include mainFont;	
+}
+
+// link
+a
+{
+	&:link,
+	&:visited,
+	&:hover,
+	&:active
+	{
+		color: #777;
+		text-decoration: none;
+	}
+
+	&:active
+	{
+		// gives the link a press state
+		margin-top: 1px;
+	}
+
+}
+
+
+main {
+	margin-top: 30px;
+}
+
+
+// ----------------------------------
+// fonts
+// ----------------------------------
+
+.font-arial {
+	font-family: Arial, Geneva, sans-serif;
+}
+
+.font-verdana {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.font-arial-black {
+	font-family: "Arial Black", "OpenSans-ExtraBold", "Arial Bold", Gadget, sans-serif;
+}
+
+
+// ----------------------------------
+// styles
+// ----------------------------------
+.italic {
+	font-style: italic;
+}
+
+
+
