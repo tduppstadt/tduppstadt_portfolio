@@ -32,8 +32,25 @@ function (view, formLogin)
         init: function()
         {           
             console.log(" * <contact>");
-         
+            
+            this.registerPage();
             this.assignListeners();
+        },
+
+        // ______________________________________________________________
+        //                                                   registerPage
+        registerPage: function()
+        {  
+            var evtStr = "EVENT_LOAD_CONTACT";
+            this.oView.registerPage({
+                events: [evtStr],
+                routes: {
+                    contact: {
+                        hashString : "contact",
+                        loadEvent  : evtStr
+                    }
+                }
+            });
         },
 
 

@@ -32,8 +32,25 @@ function (view, formLogin)
         init: function()
         {           
             console.log(" * <design>");
-         
+            
+            this.registerPage();
             this.assignListeners();
+        },
+
+        // ______________________________________________________________
+        //                                                   registerPage
+        registerPage: function()
+        {  
+            var evtStr = "EVENT_LOAD_DESIGN";
+            this.oView.registerPage({
+                events: [evtStr],
+                routes: {
+                    design: {
+                        hashString : "design",
+                        loadEvent  : evtStr
+                    }
+                }
+            });
         },
 
 

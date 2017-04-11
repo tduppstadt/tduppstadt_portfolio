@@ -102,8 +102,7 @@ require.config(
 					"index",
 					"testimonials",		
 					"development",		
-					"about",		
-					"contact",
+					"about",
 					"design"	]
 		},
 

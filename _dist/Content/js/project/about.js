@@ -32,10 +32,26 @@ function (view, formLogin)
         init: function()
         {           
             console.log(" * <about>");
-         
+            
+            this.registerPage();
             this.assignListeners();
         },
 
+        // ______________________________________________________________
+        //                                                   registerPage
+        registerPage: function()
+        {  
+            var evtStr = "EVENT_LOAD_ABOUT";
+            this.oView.registerPage({
+                events: [evtStr],
+                routes: {
+                    about: {
+                        hashString : "about",
+                        loadEvent  : evtStr
+                    }
+                }
+            });
+        },
 
         // ______________________________________________________________
         //                                                assignListeners
