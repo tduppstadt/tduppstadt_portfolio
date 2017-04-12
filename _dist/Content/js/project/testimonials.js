@@ -1,9 +1,8 @@
 define([
-    "common/view",
-    "forms/form_login"  
+    "common/view"
 ], 
 
-function (view, formLogin)
+function (view)
 {
 
     // ---------------------------------------------------------------
@@ -12,19 +11,17 @@ function (view, formLogin)
     //
     // ---------------------------------------------------------------
 
-    var constructor = function ()
+    var constr = function ()
     {
         this.oView = view;
 
-        this.oForm = formLogin;
-        
         this.init();
     };
 
-    var methods =
+    var inheritObj =
     {    
         // --------------------------------------------------------------
-        // METHODS
+        // inheritObj
         // --------------------------------------------------------------
         
         // ______________________________________________________________
@@ -32,10 +29,26 @@ function (view, formLogin)
         init: function()
         {           
             console.log(" * <testimonials>");
-         
+            
+            this.registerPage();
             this.assignListeners();
         },
 
+        // ______________________________________________________________
+        //                                                   registerPage
+        registerPage: function()
+        {  
+            var evtStr = "EVENT_LOAD_TESTIMONIALS";
+            this.oView.registerPage({
+                events: [evtStr],
+                routes: {
+                    testimonials: {
+                        hashString : "testimonials",
+                        loadEvent  : evtStr
+                    }
+                }
+            });
+        },
 
         // ______________________________________________________________
         //                                                assignListeners
@@ -77,11 +90,11 @@ function (view, formLogin)
 
     };
 
-    var Class = constructor;
-    Class.prototype = methods;
+    var Class = constr;
+    Class.prototype = inheritObj;
     
     var instance = new Class();
     
-    return (Class);     
+    return (instance);     
    
 });

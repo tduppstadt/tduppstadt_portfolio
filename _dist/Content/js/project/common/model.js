@@ -11,23 +11,18 @@ function (helpers)
     //
     // ---------------------------------------------------------------
    
-    var constructor = function ()
+    var Model = function ()
     {   
         // events
         window.tEvent.eventStr.EVENT_JSON_LOADED = "EVENT_JSON_LOADED";
 
-        // page events
+        // common page events
         window.tEvent.eventStr.EVENT_NEW_PAGE          = "EVENT_NEW_PAGE";
         window.tEvent.eventStr.EVENT_PAGE_LOADED       = "EVENT_PAGE_LOADED";
         window.tEvent.eventStr.EVENT_RETRY_ANCHOR      = "EVENT_RETRY_ANCHOR";
-
-        window.tEvent.eventStr.EVENT_LOAD_INDEX        = "EVENT_LOAD_INDEX";
-        window.tEvent.eventStr.EVENT_LOAD_TESTIMONIALS = "EVENT_LOAD_TESTIMONIALS";
-        window.tEvent.eventStr.EVENT_LOAD_DEVELOPMENT  = "EVENT_LOAD_DEVELOPMENT";
-        window.tEvent.eventStr.EVENT_LOAD_ABOUT        = "EVENT_LOAD_ABOUT";
-        window.tEvent.eventStr.EVENT_LOAD_CONTACT      = "EVENT_LOAD_CONTACT";
-        window.tEvent.eventStr.EVENT_LOAD_DESIGN       = "EVENT_LOAD_DESIGN";
         
+        // maintains page data for router
+        this.pageModel = { page:{} };
 
         // useful
         this.queryString = window.helpers.parseQuerystring();     
@@ -43,7 +38,7 @@ function (helpers)
         this.init();
     };
        
-    var methods =
+    Model.prototype =
     {
         // --------------------------------------------------------------
         // METHODS
@@ -151,10 +146,7 @@ function (helpers)
 
     };
 
-    var Class = constructor;
-    Class.prototype = methods;
-
-    var instance = new Class();
+    var oModel = new Model();
     
-    return (instance);    
+    return (oModel);    
 });
