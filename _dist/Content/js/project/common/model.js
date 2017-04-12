@@ -11,7 +11,7 @@ function (helpers)
     //
     // ---------------------------------------------------------------
    
-    var constructor = function ()
+    var Model = function ()
     {   
         // events
         window.tEvent.eventStr.EVENT_JSON_LOADED = "EVENT_JSON_LOADED";
@@ -38,7 +38,7 @@ function (helpers)
         this.init();
     };
        
-    var methods =
+    Model.prototype =
     {
         // --------------------------------------------------------------
         // METHODS
@@ -146,10 +146,7 @@ function (helpers)
 
     };
 
-    var Class = constructor;
-    Class.prototype = methods;
-
-    var instance = new Class();
+    var oModel = new Model();
     
-    return (instance);    
+    return (oModel);    
 });

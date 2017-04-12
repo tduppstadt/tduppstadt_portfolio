@@ -225,17 +225,21 @@ body.lg-on{
 
 
 // section title
-.l-section-title {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 23px;
-    margin-bottom: 11px;
-    color: #555;
-    text-align: center;
-    background-color: rgba(236, 236, 236, 0.4);
-    position: relative;
+.l-section {
+
+	&-title {
+	    border-top: 1px solid #ccc;
+	    border-bottom: 1px solid #ccc;
+	    padding-top: 20px;
+	    padding-bottom: 20px;
+	    font-size: 23px;
+	    margin-bottom: 11px;
+	    color: #555;
+	    text-align: center;
+	    background-color: rgba(236, 236, 236, 0.4);
+	    position: relative;
+	}
+
 
     &__backToTop {
     	position: absolute;

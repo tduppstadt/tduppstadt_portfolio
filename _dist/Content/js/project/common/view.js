@@ -12,7 +12,7 @@ function (model, services)
     //
     // ---------------------------------------------------------------
    
-    var constructor = function()
+    var View = function()
     {
         console.log(" * <view>");
 
@@ -30,7 +30,7 @@ function (model, services)
         this.init();
     };
 
-    var methods =
+    View.prototype =
     {
 
         // --------------------------------------------------------------
@@ -194,10 +194,7 @@ function (model, services)
 
     };
 
-    var Class = constructor;
-    Class.prototype = methods;
+    var oView = new View();
 
-    var instance = new Class();
-    
-    return (instance);  
+    return (oView);  
 });

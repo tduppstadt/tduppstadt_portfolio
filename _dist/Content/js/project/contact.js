@@ -1,9 +1,8 @@
 define([
-    "common/view",
-    "forms/form_login"  
+    "common/view" 
 ], 
 
-function (view, formLogin)
+function (view)
 {
 
     // ---------------------------------------------------------------
@@ -12,19 +11,17 @@ function (view, formLogin)
     //
     // ---------------------------------------------------------------
 
-    var constructor = function ()
+    var constr = function ()
     {
         this.oView = view;
-
-        this.oForm = formLogin;
         
         this.init();
     };
 
-    var methods =
+    var inheritObj =
     {    
         // --------------------------------------------------------------
-        // METHODS
+        // inheritObj
         // --------------------------------------------------------------
         
         // ______________________________________________________________
@@ -110,11 +107,11 @@ function (view, formLogin)
 
     };
 
-    var Class = constructor;
-    Class.prototype = methods;
+    var Class = constr;
+    Class.prototype = inheritObj;
     
     var instance = new Class();
     
-    return (Class);     
+    return (instance);     
    
 });

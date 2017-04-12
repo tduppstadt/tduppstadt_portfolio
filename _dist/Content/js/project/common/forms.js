@@ -56,7 +56,7 @@ function (model, services)
 	// FORMS
 	//
 	// ---------------------------------------------------------------
-	var constructor = function()
+	var Forms = function()
 	{
 		console.log(" * <forms>");
 
@@ -84,7 +84,7 @@ function (model, services)
 		this.init();
 	};
 	
-	var methods =
+	Forms.prototype =
 	{
 
 		// ______________________________________________________________
@@ -402,11 +402,8 @@ function (model, services)
 		
 	};
 	
-	var Class = constructor;
-	Class.prototype = methods;
-
-	var instance = new Class();
+	var oForms = new Forms();
 	
-	return (instance);
+	return (oForms);
 
 });

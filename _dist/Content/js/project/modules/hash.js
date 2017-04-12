@@ -29,7 +29,7 @@ function () {
     //
     // ---------------------------------------------------------------
    
-    var constructor = function ()
+    var Hash = function ()
     {   
         console.log(" * <hash>");
 
@@ -47,7 +47,7 @@ function () {
         */
     };
        
-    var methods =
+    Hash.prototype =
     {
         // --------------------------------------------------------------
         // METHODS
@@ -175,9 +175,7 @@ function () {
 
     };
 
-    var Class = constructor;
-    Class.prototype = methods;
-    var oHash = new Class();
+    var oHash = new Hash();
     /*if (window._hash === undefined)
         window._hash = oHash;*/
 
