@@ -102,12 +102,26 @@ function (view)
             // notify when both galleries are loaded so 
             window.oNotify.registerTask({
                 groupName: "Design_Galleries_Loaded",
-                taskList: ["interface", "print"],             
+                taskList: ["composite", "interface", "print"],             
                 onDone: function(){                
                     window.tEvent.fire(window.tEvent.eventStr.EVENT_RETRY_ANCHOR);
                 }
             });
 
+
+            // composite gallery
+            $(".composite-container").lightGallery({
+                mode: 'lg-zoom-in-big',
+                //cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
+                preload: 2,
+                download: false,
+                hash: false
+            }).justifiedGallery({
+                rowHeight: 120,
+                maxRowHeight: 120
+            }).on('jg.complete', function (e) {
+                window.oNotify.Design_Galleries_Loaded.update("composite");
+            });
 
             // interface gallery
             $(".interface-container").lightGallery({
