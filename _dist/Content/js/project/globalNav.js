@@ -67,10 +67,14 @@ function (hash, view)
             // add anchor click to the hash
             $("body").on("click", this.ui.anchor, function(){
                 var anchor = $(this).attr("data-anchor");
-                var myHash = location.hash.split("#")[1].split(";")[0];
-                myHash += ";anchor=" + anchor;
+                var myHash = "";
+                if (location.hash.split("#").length > 1){
+                    myHash = location.hash.split("#")[1].split(";")[0];
+                    myHash += ";anchor=" + anchor;
+                } else {
+                    myHash += "anchor=" + anchor;
+                }
                 self.oHash.setHash(myHash);
-
                 self.onScrollToAnchor(anchor);
             });
 
