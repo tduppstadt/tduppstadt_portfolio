@@ -17,6 +17,42 @@
 // ----------------------------------
 // header
 // ----------------------------------
+.email-link {
+	background-image: url(../images/global/icons/email-icon.png);
+    background-size: 13%;
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    padding-left: 25px;
+}
+
+.linkedin-link {
+    background-image: url(../images/global/icons/linkedin-icon.png);
+    background-size: 23%;
+    background-repeat: no-repeat;
+    padding-left: 19px;
+}
+
+.github-link {
+    background-image: url(../images/global/icons/github-icon.png);
+    background-size: 23%;
+    background-repeat: no-repeat;
+    padding-left: 19px;
+}
+
+.resume-link {
+    background-image: url(../images/global/icons/resume-icon.png);
+    background-size: 23%;
+    background-repeat: no-repeat;
+    padding-left: 19px;    
+}
+
+.icon-link {
+	height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    cursor: hand;
+}
+
 .header {
 	text-align: center;
 
@@ -44,6 +80,8 @@
 		&--space {
 			padding-right: 10px;
 			padding-left: 10px;
+			top: -5px;
+    		position: relative;
 		}
 
 	}
